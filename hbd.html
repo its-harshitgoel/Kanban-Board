@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Saurabh Sir!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #87CEEB;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: #FFD700;
+            color: #333;
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        #birthday-message {
+            padding: 20px;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #FFD700;
+            color: #333;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .balloon {
+            position: absolute;
+            font-size: 2em;
+            color: #FF69B4;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(0, -20px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Happy Birthday Saurabh Sir!</h1>
+    </header>
+    
+    <section id="birthday-message">
+        <p>Dear Saurabh Sir,</p>
+        <p>Wishing you a fantastic birthday filled with joy, laughter, and all the things you love. May this year bring you immense success and happiness!</p>
+        <p>Cheers!</p>
+    </section>
+
+  <!-- Balloons -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        createBalloons();
+    });
+
+    function createBalloons() {
+        const balloonContainer = document.createElement('div');
+        balloonContainer.id = 'balloon-container';
+        document.body.appendChild(balloonContainer);
+
+        for (let i = 0; i < 10; i++) {
+            const balloon = document.createElement('i');
+            balloon.className = 'fas fa-balloon balloon';
+            balloon.style.left = Math.random() * window.innerWidth + 'px';
+            balloon.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            balloonContainer.appendChild(balloon);
+        }
+    }
+</script>
+
+    <footer>
+        <p>Best Wishes, Your Name</p>
+    </footer>
+</body>
+</html>

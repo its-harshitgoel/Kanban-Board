@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-image: url('image2.png');
+    background-size: cover; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.toolbox-container {
+    width: 100vw;
+    height: 5rem;
+    /* background-image: url('image1.jpeg');
+    background-size: cover; */
+    background-color: black;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    background-color: black;
+}
+
+.priority-container {
+    width: 30rem;
+    height: 3.5rem;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 0.8rem;
+}
+
+.black-box {
+    height: 2.3rem;
+    width: 5rem;
+    background-color: rgb(226, 226, 92);
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.grey-box {
+    height: 2.3rem;
+    width: 5rem;
+    background-color: rgb(246, 168, 168);
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cyan-box {
+    height: 2.3rem;
+    width: 5rem;
+    background-color: rgb(169, 202, 202);
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.red-box {
+    height: 2.3rem;
+    width: 5rem;
+    background-color: rgb(247, 80, 80);
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.action-btn-cont {
+    width: 10rem;
+    height: 3.5rem;
+    background-color: aliceblue;
+    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+}
+
+.add-btn {
+    font-size: 2.25rem;
+    transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.add-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: green;
+    transition: transform 0.1s ease-in-out;
+
+
+}
+
+.remove-btn {
+    font-size: 1.8rem;
+    transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.remove-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: red;
+    transition: transform 0.1s ease-in-out;
+}
+
+.modal-cont {
+    height: 50vh;
+    width: 50vw;
+    background-color: burlywood;
+    display: none;
+    position: fixed;
+    left: 25vw;
+    top: 25vh;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 2.0);
+    animation: fadeIn 0.25s ease-in-out;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.textarea-cont {
+    height: 100%;
+    width: 75%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 2.5rem;
+    padding: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.priority-color-cont {
+    height: 100%;
+    width: 25%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: -1px 0px 3px 0px black;
+}
+
+.priority-color {
+    height: 4rem;
+    width: 7rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.priority-color:hover {
+    cursor: pointer;
+    transform: scale(0.85);
+    border: 5px solid rgb(255, 255, 255);
+
+}
+
+.priority-color.clicked {
+    transform: scale(0.85);
+    border: 5px solid rgb(255, 255, 255);
+}
+
+.red {
+    background-color: rgb(247, 80, 80);
+}
+
+.blue {
+    background-color: rgb(169, 202, 202);
+}
+
+.pink {
+    background-color: rgb(246, 168, 168);
+}
+
+.yellow {
+    background-color: rgb(226, 226, 92);
+}
+
+.main-cont {
+    margin: 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+    position: relative;
+
+}
+
+.ticket-cont {
+    height: 17rem;
+    width: 22rem;
+    background-color: rgb(236, 240, 211);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.30);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+
+.ticket-color {
+    height: 2rem;
+
+}
+
+.ticket-id {
+    height: 1.5rem;
+    font-weight: bold;
+    background-color: rgb(219, 218, 218);
+}
+
+.ticket-area {
+    height: calc(100% - 3.5rem);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    overflow: auto;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    background-image: url('image2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.toolbox-container {
+    width: 100vw;
+    height: 5rem;
+    background-image: url('image1.jpeg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.85);
+    justify-content: center;
+} */
+
+.priority-container {
+    width: 30rem;
+    height: 3.5rem;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 0.8rem;
+}
+
+.black-box {
+    height: 2.3rem;
+    width: 5rem;
+    background-color: rgb(226, 226, 92);
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.grey-box {
+    height: 2.3rem;
+    width: 5rem;
+    background-color: rgb(246, 168, 168);
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cyan-box {
+    height: 2.3rem;
+    width: 5rem;
+    background-color: rgb(169, 202, 202);
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.red-box {
+    height: 2.3rem;
+    width: 5rem;
+    background-color: rgb(247, 80, 80);
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.action-btn-cont {
+    width: 10rem;
+    height: 3.5rem;
+    background-color: aliceblue;
+    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+}
+
+.add-btn {
+    font-size: 2.25rem;
+    transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.add-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: green;
+    transition: transform 0.1s ease-in-out;
+}
+
+.remove-btn {
+    font-size: 1.8rem;
+    transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.remove-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.remove-btn.clicked {
+    color: red;
+}
+
+.modal-cont {
+    height: 50vh;
+    width: 50vw;
+    background-color: burlywood;
+    display: none;
+    position: fixed;
+    left: 25vw;
+    top: 25vh;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 2.0);
+    animation: fadeIn 0.25s ease-in-out;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.textarea-cont {
+    height: 100%;
+    width: 75%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 2.5rem;
+    padding: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.priority-color-cont {
+    height: 100%;
+    width: 25%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: -1px 0px 3px 0px black;
+}
+
+.priority-color {
+    height: 4rem;
+    width: 7rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.priority-color:hover {
+    cursor: pointer;
+    transform: scale(0.85);
+    border: 3px solid rgba(0, 0, 0, 0.114);
+
+}
+
+.priority-color.clicked {
+    transform: scale(0.85);
+    border: 3px solid rgba(0, 0, 0, 0.414);
+}
+
+.red {
+    background-color: rgb(247, 80, 80);
+}
+
+.blue {
+    background-color: rgb(169, 202, 202);
+}
+
+.pink {
+    background-color: rgb(246, 168, 168);
+}
+
+.yellow {
+    background-color: rgb(226, 226, 92);
+}
+
+.main-cont {
+    margin: 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+    position: relative;
+
+}
+
+.ticket-cont {
+    height: 17rem;
+    width: 22rem;
+    background-color: rgb(236, 240, 211);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.30);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.ticket-color {
+    height: 2rem;
+
+}
+
+.ticket-id {
+    height: 1.5rem;
+    font-weight: bold;
+    background-color: rgb(219, 218, 218);
+}
+
+.ticket-area {
+    height: calc(100% - 3.5rem);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    overflow: auto;
+}
+
+.ticket-lock {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: rgb(0, 0, 0);
+    font-size: 1.3rem;
+}
+
+.ticket-lock:hover {
+    cursor: pointer;
+    color: rgb(133, 133, 128);
+}

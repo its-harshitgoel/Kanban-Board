@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclic Behaviour</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: rgb(52, 50, 50);
+            color: white;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 50%;
+           box-shadow: 0 0 1rem black;
+           text-size-adjust: 2rem;
+        }
+
+        div:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>0</div>
+    <script>
+        let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        let index = 0;
+        let div = document.querySelector('div');
+
+        div.addEventListener('click', function () {
+            // index = (index + 1) % arr.length;
+            // div.innerText = arr[index];
+            console.log("hi");
+        });
+    </script>
+</body>
+</html>

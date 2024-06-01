@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Tasks</title>
+    <style>
+        button {
+            font-size: 3rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: lightblue;
+            border: none;
+            box-shadow: 0 0 0.2rem 0 black;
+            margin: 2rem auto;
+            margin-left: calc(50% - 10rem);
+        }
+
+
+        #toggleButton:hover {
+            background-color: rgb(219, 219, 255);
+            cursor: pointer;
+        }
+
+        .tasks-container {
+            margin: 10rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .task {
+            height: 10rem;
+            width: 10rem;
+            background-color: lightgrey;
+            border: 2px solid yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="toggleButton">Delete Deactive</button>
+    <div class="tasks-container">
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+        <div class="task" onclick="deleteTask(this)"></div>
+    </div>
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function () {
+            toggleButtonText();
+        });
+
+        function toggleButtonText() {
+            const button = document.getElementById('toggleButton');
+            const buttonText = button.innerText;
+
+            if (buttonText === 'Delete Deactive') {
+                button.innerText = 'Delete Active';
+            } else {
+                button.innerText = 'Delete Deactive';
+            }
+        }
+
+        function deleteTask(task) {
+            const buttonText = document.getElementById('toggleButton').innerText;
+
+            if (buttonText === 'Delete Active') {
+                task.remove();
+            }
+        }
+    </script>
+</body>
+
+</html>
